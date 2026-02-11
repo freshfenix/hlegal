@@ -1,0 +1,91 @@
+:root {
+  --white-color: #fff;
+
+  --main-color: #323264;
+  --main-alt-color: #46466e;
+  --main-soft-color: #686887;
+
+  --accent-color: #f0145a;
+
+  --brand-regular-color: #24a3ff;
+  --brand-hover-color: #0085ff;
+  --brand-active-color: #006ccf;
+
+  --gray-bg-color: #f5f5fa;
+  --gray-bg-alt-color: #ededf7;
+  --gray-text-color: #b3b3ba;
+  --gray-separator-color: #e6e6f0;
+
+  --main-gradient: linear-gradient(
+    129deg,
+    #323264 0%,
+    #323264 74%,
+    #a54b5f 100%
+  );
+  --soft-gradient: linear-gradient(
+    42deg,
+    #323264 14%,
+    #323264 51%,
+    #7a425e 87%
+  );
+  --red-gradient: linear-gradient(323deg, #f0145a 7%, #693264 70%);
+  --super-soft-gradient: linear-gradient(
+    229deg,
+    #323264 12%,
+    #323264 57%,
+    #643e72 87%
+  );
+  --red-text-gradient: linear-gradient(90deg, #f0145a, #ef8080);
+  --reversed-red-text-gradient: linear-gradient(90deg, #ef8080, #f0145a);
+}
+
+// FONT
+$main-font: "Montserrat", sans-serif;
+$font-bold: 700;
+
+// RADIUS
+$rounded-sm: 8px;
+$rounded-md: 12px;
+$rounded-lg: 24px;
+$rounded-full: 50%;
+
+// BREAKPOINTS
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1440px;
+$breakpoint-xxl: 1920px;
+
+// TRANSITION
+$transition-deley: 0.3s linear;
+
+// MIXINS
+@mixin flex($justify-content: space-between, $align-items: center) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin hover {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+}
+@mixin link($default-color: var(--brand-regular-color)) {
+  color: $default-color;
+  text-decoration: none;
+  transition: color $transition-deley;
+
+  @include hover {
+    color: var(--accent-color);
+  }
+  &:active {
+    color: var(--brand-active-color);
+  }
+}
+@mixin text-gradient($gradient: var(--red-text-gradient)) {
+  color: transparent;
+  background: $gradient;
+  background-clip: text;
+}

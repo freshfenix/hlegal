@@ -1,0 +1,170 @@
+@use "vars" as v;
+
+.head {
+  @include v.flex(space-between, stretch);
+  flex-direction: column;
+  min-height: 100vh;
+  background: url("../img/icons/h-symbol.svg") no-repeat center/auto 100%;
+
+  &__title {
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 auto;
+    text-transform: uppercase;
+    max-width: 315px;
+    line-height: 1.2;
+  }
+  &__link {
+    border: var(--white-color) 2px solid;
+    border-radius: v.$rounded-full;
+    width: 42px;
+    height: 42px;
+    margin: 0 auto 30px;
+    position: relative;
+    transition: v.$transition-deley;
+
+    &:hover {
+      --white-color: rgba(240, 20, 90, 1);
+    }
+
+    &::before {
+      width: 18px;
+      height: 18px;
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 10px;
+      border: var(--white-color) 2px solid;
+      border-top: 2px;
+      border-left: 2px;
+      transform: rotate(41deg);
+    }
+  }
+}
+.head__header {
+}
+.header {
+  @media (min-width: v.$breakpoint-md) {
+    padding-top: 50px;
+  }
+  &__container {
+    margin: 0 60px;
+  }
+  &__inner {
+    @include v.flex;
+    background: rgba(245, 245, 250, 0.2);
+    margin: 0 -30px;
+    padding: 10px 15px;
+    align-items: center;
+
+    @media (min-width: v.$breakpoint-md) {
+      background: none;
+    }
+  }
+  &__lang {
+    display: flex;
+  }
+  &__lang-item {
+    font-size: 12px;
+    padding: 5px 7px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: v.$rounded-sm;
+    cursor: pointer;
+    &.active {
+      background: var(--accent-color);
+    }
+  }
+
+  //   LOGO
+  &__box-logo {
+  }
+  &__box {
+    @include v.flex;
+    margin: 0 -15px;
+    padding: 15px 0 10px;
+  }
+
+  //   NAVIGATION
+  &__nav {
+  }
+  &__nav-list {
+    text-transform: lowercase;
+    gap: 15px;
+    padding-top: 30px;
+    display: none;
+
+    @media (min-width: v.$breakpoint-md) {
+      display: flex;
+    }
+  }
+  &__nav-link {
+    @include v.link(var(--white-color));
+    font-weight: 700;
+  }
+  &__nav-item {
+  }
+
+  &__tel {
+    @include v.link(var(--white-color));
+    font-weight: 700;
+  }
+  &__adress {
+    color: var(--gray-text-color);
+    display: none;
+
+    @media (min-width: v.$breakpoint-md) {
+      display: inline-block;
+    }
+  }
+  &__social {
+    display: none;
+    svg {
+      @include v.link;
+      width: 24px;
+      height: 24px;
+      color: var(--white-color);
+    }
+    @media (min-width: v.$breakpoint-md) {
+      display: inline-block;
+    }
+  }
+
+  //   BURGER-MENU
+  &__box-burger {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+
+    @media (min-width: v.$breakpoint-md) {
+      display: none;
+    }
+
+    &::before,
+    &::after,
+    span {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 6px;
+      right: 6px;
+      height: 2px;
+      background: var(--white-color);
+    }
+
+    &::after {
+      top: auto;
+      bottom: 8px;
+    }
+
+    span {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+// .default--dotted {
+// }
