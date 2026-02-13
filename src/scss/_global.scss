@@ -8,6 +8,33 @@ body {
 
 .wrapper {
   background: var(--super-soft-gradient);
+  border-bottom-right-radius: v.$rounded-md;
+  border-bottom-left-radius: v.$rounded-md;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    right: 20px;
+    height: 10px;
+    background: #cacadb;
+    border-bottom-right-radius: v.$rounded-md;
+    border-bottom-left-radius: v.$rounded-md;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 40px;
+    right: 40px;
+    height: 10px;
+    background: #e7e7f2;
+    border-bottom-right-radius: v.$rounded-md;
+    border-bottom-left-radius: v.$rounded-md;
+  }
 }
 .container {
   padding: 0 30px;

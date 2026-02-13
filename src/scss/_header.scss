@@ -155,16 +155,13 @@
     }
   }
   &__box-logo {
-    width: 69px;
-    height: 32px;
-
     img {
-      width: 100%;
-      height: 100%;
-    }
-    @media (min-width: v.$breakpoint-md) {
-      width: 130px;
-      height: 60px;
+      width: 69px;
+      height: 32px;
+      @media (min-width: v.$breakpoint-md) {
+        width: 130px;
+        height: 60px;
+      }
     }
   }
 
@@ -231,7 +228,7 @@
     font-size: 24px;
     padding: 7px 0;
 
-    &.active {
+    &.activ {
       --brand-regular-color: #f0145a;
     }
     &:active {
@@ -255,10 +252,11 @@
         color: var(--accent-color);
         border-color: var(--accent-color);
       }
-      &:hover {
-        @include v.link(var(--white-color));
-        border-color: var(--white-color);
-      }
+      // &:hover {
+      //   @include v.link(var(--white-color));
+      //   border-color: var(--white-color);
+      //   --accent-color: #fff;
+      // }
     }
   }
 

@@ -6,6 +6,7 @@
     @include v.link;
     @include v.title(var(--brand-regular-color));
     position: relative;
+    padding-right: 10px;
 
     &::before {
       transform: rotate(-41deg);
@@ -14,7 +15,7 @@
       border-right: var(--brand-regular-color) 2px solid;
       border-bottom: var(--brand-regular-color) solid 2px;
       top: 7px;
-      right: -9px;
+      right: 1px;
       width: 7px;
       height: 7px;
     }
@@ -32,10 +33,22 @@
     gap: 30px;
     flex-wrap: wrap;
     padding: 30px 0 60px 0;
+
+    @media (min-width: v.$breakpoint-md) {
+      padding-top: 60px;
+      gap: 60px;
+    }
   }
 
   &__list-item {
     flex: 1 1 100%;
+
+    @media (min-width: v.$breakpoint-md) {
+      flex: 1 1 45%;
+    }
+    @media (min-width: v.$breakpoint-lg) {
+      flex: 1 1 28%;
+    }
 
     svg {
       width: 92px;
@@ -48,6 +61,7 @@
     }
     &--text {
       padding-top: 15px;
+      line-height: 26px;
     }
   }
 }
