@@ -1,0 +1,93 @@
+@use "vars" as v;
+
+.tabs {
+  &__title {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: v.$breakpoint-lg) {
+      flex-direction: row;
+      padding-top: 30px;
+    }
+  }
+
+  &__links {
+    @include v.flex;
+    gap: 30px;
+    overflow: auto hidden;
+    padding: 30px 15px 0 0;
+    margin-right: -30px;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+    @media (min-width: v.$breakpoint-md) {
+      margin-right: calc(-50vw + 324px);
+    }
+    @media (min-width: v.$breakpoint-lg) {
+      flex-direction: column;
+      margin: 0;
+      padding: 0 60px 0 0;
+      align-items: end;
+      align-content: center;
+    }
+  }
+  &__links-item {
+    @include v.title;
+    font-size: 30px;
+    white-space: nowrap;
+    cursor: pointer;
+    &.active {
+      @include v.text-gradient(var(--reversed-red-text-gradient));
+    }
+    &:hover {
+      @include v.hover {
+        color: var(--accent-color);
+      }
+    }
+    &:active {
+      color: var(--accent-color);
+    }
+    @media (min-width: v.$breakpoint-lg) {
+      text-align: right;
+    }
+  }
+
+  &__content {
+    border-top: 4px solid rgba(255, 255, 255, 0.3);
+    padding-top: 34px;
+    @media (min-width: v.$breakpoint-md) {
+      align-content: center;
+    }
+    @media (min-width: v.$breakpoint-lg) {
+      flex: 1 1 50%;
+      border-top: 0;
+      border-left: 4px solid rgba(255, 255, 255, 0.3);
+      padding: 0 0 0 64px;
+    }
+  }
+
+  &__content-item {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+
+  &__content-title {
+    @include v.title(var(--white-color));
+    font-size: 30px;
+  }
+
+  &__content-desc {
+    padding-top: 30px;
+    line-height: 30px;
+  }
+}

@@ -11,10 +11,30 @@ body {
 }
 .container {
   padding: 0 30px;
+  @media (min-width: v.$breakpoint-md) {
+    margin: 0 auto;
+    max-width: 708px;
+  }
+  @media (min-width: v.$breakpoint-lg) {
+    max-width: 964px;
+  }
+  @media (min-width: v.$breakpoint-xl) {
+    max-width: 1380px;
+  }
+  @media (min-width: v.$breakpoint-xxl) {
+    max-width: 1660px;
+  }
 }
 .dotted {
   display: none;
   @media (min-width: v.$breakpoint-md) {
-    // зробити точки
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: v.$rounded-full;
+
+    &--default {
+      background: var(--gray-separator-color);
+    }
   }
 }

@@ -6,13 +6,14 @@
   min-height: 100vh;
   background: url("../img/icons/h-symbol.svg") no-repeat center/auto 100%;
 
+  &__header {
+  }
   &__title {
     font-size: 38px;
     font-weight: 700;
     text-align: center;
     margin: 0 auto;
-    text-transform: uppercase;
-    max-width: 315px;
+    text-transform: lowercase;
     line-height: 1.2;
   }
   &__link {
@@ -29,27 +30,35 @@
     }
 
     &::before {
-      width: 18px;
-      height: 18px;
+      width: 14px;
+      height: 14px;
       content: "";
       position: absolute;
-      top: 6px;
-      left: 10px;
+      top: 9px;
+      left: 12px;
       border: var(--white-color) 2px solid;
       border-top: 2px;
       border-left: 2px;
-      transform: rotate(41deg);
+      transform: rotate(42deg);
     }
   }
 }
-.head__header {
-}
+
+// HEADER
+
 .header {
   @media (min-width: v.$breakpoint-md) {
     padding-top: 50px;
   }
   &__container {
-    margin: 0 60px;
+    @media (min-width: v.$breakpoint-md) {
+      display: flex;
+      flex-flow: column;
+      gap: 30px;
+    }
+    @media (min-width: v.$breakpoint-lg) {
+      gap: 16px;
+    }
   }
   &__inner {
     @include v.flex;
@@ -60,6 +69,14 @@
 
     @media (min-width: v.$breakpoint-md) {
       background: none;
+      padding: 0;
+      margin: 0;
+      justify-content: flex-start;
+      gap: 6px;
+    }
+    @media (min-width: v.$breakpoint-lg) {
+      justify-content: flex-end;
+      position: relative;
     }
   }
   &__lang {
@@ -75,59 +92,10 @@
     &.active {
       background: var(--accent-color);
     }
-  }
-
-  //   LOGO
-  &__box-logo {
-  }
-  &__box {
-    @include v.flex;
-    margin: 0 -15px;
-    padding: 15px 0 10px;
-  }
-
-  //   NAVIGATION
-  &__nav {
-  }
-  &__nav-list {
-    text-transform: lowercase;
-    gap: 15px;
-    padding-top: 30px;
-    display: none;
-
-    @media (min-width: v.$breakpoint-md) {
-      display: flex;
-    }
-  }
-  &__nav-link {
-    @include v.link(var(--white-color));
-    font-weight: 700;
-  }
-  &__nav-item {
-  }
-
-  &__tel {
-    @include v.link(var(--white-color));
-    font-weight: 700;
-  }
-  &__adress {
-    color: var(--gray-text-color);
-    display: none;
-
-    @media (min-width: v.$breakpoint-md) {
-      display: inline-block;
-    }
-  }
-  &__social {
-    display: none;
-    svg {
-      @include v.link;
-      width: 24px;
-      height: 24px;
-      color: var(--white-color);
-    }
-    @media (min-width: v.$breakpoint-md) {
-      display: inline-block;
+    &:hover {
+      @include v.hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
     }
   }
 
@@ -137,6 +105,11 @@
     width: 32px;
     height: 32px;
     cursor: pointer;
+    border-radius: v.$rounded-sm;
+
+    &:active {
+      background: var(--main-soft-color);
+    }
 
     @media (min-width: v.$breakpoint-md) {
       display: none;
@@ -162,6 +135,155 @@
     span {
       top: 50%;
       transform: translateY(-50%);
+    }
+  }
+
+  //   LOGO
+  &__box {
+    @include v.flex;
+    margin: 0 -15px;
+    padding: 15px 0 10px;
+
+    @media (min-width: v.$breakpoint-md) {
+      margin: 0;
+      padding: 0;
+    }
+    @media (min-width: v.$breakpoint-lg) {
+      position: absolute;
+      top: 50px;
+      left: auto;
+    }
+  }
+  &__box-logo {
+    width: 69px;
+    height: 32px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    @media (min-width: v.$breakpoint-md) {
+      width: 130px;
+      height: 60px;
+    }
+  }
+
+  //   NAVIGATION
+  &__nav {
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    left: 8px;
+    right: 8px;
+    padding: 12px;
+    text-align: center;
+    background: var(--white-color);
+    border-top-left-radius: v.$rounded-md;
+    border-top-right-radius: v.$rounded-md;
+    transition: transform v.$transition-deley;
+    transform: translateY(100%);
+
+    &.active {
+      transform: translateY(0);
+    }
+    @media (min-width: v.$breakpoint-md) {
+      position: static;
+      transform: translateY(0);
+      background: 0;
+      padding: 0;
+    }
+  }
+  &__nav-list {
+    display: flex;
+    padding-top: 20px;
+    flex-direction: column;
+    text-transform: lowercase;
+    gap: 15px;
+
+    @media (min-width: v.$breakpoint-md) {
+      flex-direction: row;
+      padding: 0;
+    }
+    @media (min-width: v.$breakpoint-lg) {
+      justify-content: flex-end;
+    }
+  }
+  &__nav-close {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: block;
+    margin: 0 0 20px auto;
+
+    @media (min-width: v.$breakpoint-md) {
+      display: none;
+    }
+  }
+  &__nav-item {
+  }
+  &__nav-link {
+    display: inline-block;
+    @include v.link(var(--brand-regular-color));
+    @include v.title(var(--brand-regular-color));
+    background: var(--gray-bg-color);
+    border-radius: v.$rounded-md;
+    width: 100%;
+    font-size: 24px;
+    padding: 7px 0;
+
+    &.active {
+      --brand-regular-color: #f0145a;
+    }
+    &:active {
+      background: var(--gray-separator-color);
+      color: var(--brand-regular-color);
+    }
+
+    @media (min-width: v.$breakpoint-md) {
+      width: 100%;
+      border-bottom: 2px solid transparent;
+      font-size: 16px;
+      @include v.link(var(--white-color));
+      @include v.hover {
+        border-color: var(--white-color);
+        --accent-color: #fff;
+      }
+      border-radius: 0;
+      background: 0;
+      &:active {
+        background: none;
+        color: var(--accent-color);
+        border-color: var(--accent-color);
+      }
+      &:hover {
+        @include v.link(var(--white-color));
+        border-color: var(--white-color);
+      }
+    }
+  }
+
+  &__tel {
+    @include v.link(var(--white-color));
+    font-weight: 700;
+  }
+  &__adress {
+    color: var(--gray-text-color);
+    display: none;
+
+    @media (min-width: v.$breakpoint-md) {
+      display: inline-block;
+    }
+  }
+  &__social {
+    display: none;
+    svg {
+      @include v.link;
+      width: 24px;
+      height: 24px;
+      color: var(--white-color);
+    }
+    @media (min-width: v.$breakpoint-md) {
+      display: inline-block;
     }
   }
 }

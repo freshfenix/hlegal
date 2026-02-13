@@ -1,0 +1,53 @@
+@use "vars" as v;
+
+.services {
+  margin-top: 30px;
+  &__link {
+    @include v.link;
+    @include v.title(var(--brand-regular-color));
+    position: relative;
+
+    &::before {
+      transform: rotate(-41deg);
+      content: "";
+      position: absolute;
+      border-right: var(--brand-regular-color) 2px solid;
+      border-bottom: var(--brand-regular-color) solid 2px;
+      top: 7px;
+      right: -9px;
+      width: 7px;
+      height: 7px;
+    }
+  }
+
+  &__title {
+    @include v.title(transparent);
+    @include v.text-gradient;
+    font-size: 30px;
+    padding-top: 10px;
+  }
+
+  &__list {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 30px 0 60px 0;
+  }
+
+  &__list-item {
+    flex: 1 1 100%;
+
+    svg {
+      width: 92px;
+      height: 92px;
+    }
+
+    &--title {
+      @include v.title(var(--brand-regular-color));
+      padding-top: 30px;
+    }
+    &--text {
+      padding-top: 15px;
+    }
+  }
+}

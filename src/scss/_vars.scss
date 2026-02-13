@@ -65,9 +65,19 @@ $transition-deley: 0.3s linear;
   align-items: $align-items;
 }
 
+@mixin title($title-color: var(--gray-text-color)) {
+  color: $title-color;
+  font-weight: 700;
+}
+@mixin text-gradient($text-gradient: var(--red-text-gradient)) {
+  color: transparent;
+  background: $text-gradient;
+  background-clip: text;
+}
+
 @mixin hover {
   @media (hover: hover) and (pointer: fine) {
-    &:hover {
+    &:hover:not(.active) {
       @content;
     }
   }
