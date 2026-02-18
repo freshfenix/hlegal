@@ -1,0 +1,91 @@
+@use "vars" as v;
+
+.team {
+  margin-bottom: 60px;
+  &__container {
+    .swiper-pagination {
+      --swiper-pagination-color: var(--brand-regular-color);
+      --swiper-pagination-bullet-inactive-color: var(--swiper-pagination-color);
+      --swiper-pagination-bullet-size: 16px;
+
+      position: static;
+      margin-top: 30px;
+    }
+  }
+
+  &__swiper {
+  }
+
+  &__wrapper {
+    background: var(--white-color);
+    align-items: center;
+  }
+
+  &__slide {
+    background: var(--gray-bg-color);
+    border-radius: v.$rounded-md;
+    overflow: hidden;
+
+    @media (min-width: v.$breakpoint-lg) {
+      display: flex;
+    }
+  }
+
+  &__image {
+    height: 500px;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    @media (min-width: v.$breakpoint-lg) {
+      flex: 0 0 400px;
+      height: auto;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
+  &__inner {
+    padding: 30px;
+    position: relative;
+
+    @media (min-width: v.$breakpoint-lg) {
+      padding-left: 30px;
+    }
+  }
+
+  &__inner-bread {
+    @include v.link-title;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  &__inner-title {
+    @include v.text-gradient;
+    @include v.title(transparent);
+    font-size: 38px;
+  }
+
+  &__inner-name {
+    padding-top: 30px;
+    p {
+      @include v.title;
+    }
+    p + p {
+      font-weight: 400;
+      padding-top: 6px;
+      line-height: 1.5;
+    }
+  }
+}

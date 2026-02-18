@@ -3,11 +3,15 @@
 body {
   font-family: v.$main-font;
   font-weight: 400;
-  color: var(--white-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .wrapper {
   background: var(--super-soft-gradient);
+  color: var(--white-color);
+  margin-bottom: 50px;
   border-bottom-right-radius: v.$rounded-md;
   border-bottom-left-radius: v.$rounded-md;
   position: relative;
@@ -34,6 +38,10 @@ body {
     background: #e7e7f2;
     border-bottom-right-radius: v.$rounded-md;
     border-bottom-left-radius: v.$rounded-md;
+  }
+
+  @media (min-width: v.$breakpoint-md) {
+    margin-bottom: 80px;
   }
 }
 .container {
@@ -62,6 +70,9 @@ body {
 
     &--default {
       background: var(--gray-separator-color);
+    }
+    &--gray {
+      background: var(--gray-text-color);
     }
   }
 }

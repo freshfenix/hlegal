@@ -22,5 +22,8 @@
     "svgo": "^3.3.2",
     "vite": "^6.2.1",
     "vite-plugin-image-optimizer": "^1.1.8"
+  },
+  "dependencies": {
+    "swiper": "^12.1.1"
   }
 }

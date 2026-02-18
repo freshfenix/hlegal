@@ -3,22 +3,10 @@
 .services {
   margin-top: 30px;
   &__link {
-    @include v.link;
-    @include v.title(var(--brand-regular-color));
-    position: relative;
-    padding-right: 10px;
-
-    &::before {
-      transform: rotate(-41deg);
-      content: "";
-      position: absolute;
-      border-right: var(--brand-regular-color) 2px solid;
-      border-bottom: var(--brand-regular-color) solid 2px;
-      top: 7px;
-      right: 1px;
-      width: 7px;
-      height: 7px;
-    }
+    @include v.link-title;
+  }
+  @media (min-width: v.$breakpoint-md) {
+    margin-top: 60px;
   }
 
   &__title {
@@ -29,7 +17,7 @@
   }
 
   &__list {
-    display: flex;
+    @include v.flex(space-between, stretch);
     gap: 30px;
     flex-wrap: wrap;
     padding: 30px 0 60px 0;
@@ -40,8 +28,13 @@
     }
   }
 
-  &__list-item {
+  &__item {
     flex: 1 1 100%;
+
+    a {
+      text-decoration: none;
+      display: inline-block;
+    }
 
     @media (min-width: v.$breakpoint-md) {
       flex: 1 1 45%;
@@ -49,19 +42,22 @@
     @media (min-width: v.$breakpoint-lg) {
       flex: 1 1 28%;
     }
+    &-title {
+      @include v.title(var(--brand-regular-color));
+      padding-top: 30px;
 
+      a {
+        @include v.link;
+      }
+    }
+    &-text {
+      color: var(--white-color);
+      padding-top: 15px;
+      line-height: 1.6;
+    }
     svg {
       width: 92px;
       height: 92px;
-    }
-
-    &--title {
-      @include v.title(var(--brand-regular-color));
-      padding-top: 30px;
-    }
-    &--text {
-      padding-top: 15px;
-      line-height: 26px;
     }
   }
 }

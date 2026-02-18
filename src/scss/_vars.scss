@@ -58,6 +58,10 @@ $breakpoint-xxl: 1920px;
 // TRANSITION
 $transition-deley: 0.3s linear;
 
+// BORDER
+$border-sm: 2px solid;
+$border-ml: 4px solid;
+
 // MIXINS
 @mixin flex($justify-content: space-between, $align-items: center) {
   display: flex;
@@ -98,4 +102,28 @@ $transition-deley: 0.3s linear;
   color: transparent;
   background: $gradient;
   background-clip: text;
+}
+@mixin link-title {
+  @include link;
+  @include title(var(--brand-regular-color));
+  @include hover {
+    --brand-regular-color: #f0145a;
+  }
+  position: relative;
+  padding-right: 15px;
+  text-transform: uppercase;
+
+  &::before {
+    transform: rotate(-41deg);
+    content: "";
+    position: absolute;
+    border-right: var(--brand-regular-color) 2px solid;
+    border-bottom: var(--brand-regular-color) solid 2px;
+    top: 6px;
+    right: 5px;
+    width: 7px;
+    height: 7px;
+  }
+}
+@mixin border {
 }

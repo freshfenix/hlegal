@@ -1,0 +1,74 @@
+@use "vars" as v;
+.publications {
+  background: var(--gray-bg-color);
+  padding-top: 30px;
+  &__link {
+    @include v.link-title;
+  }
+
+  &__title {
+    @include v.title(transparent);
+    @include v.text-gradient;
+    font-size: 30px;
+    padding-top: 5px;
+
+    @media (min-width: v.$breakpoint-md) {
+      padding-top: 10px;
+    }
+  }
+
+  &__container {
+    @include v.flex(space-between, stretch);
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-top: 30px;
+  }
+
+  &__container-card {
+    flex: 1 1 100%;
+    background: var(--white-color);
+    border-radius: v.$rounded-sm;
+    overflow: hidden;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 200px;
+    }
+    &--title {
+      @include v.title(var(--brand-regular-color));
+      transition: v.$transition-deley;
+
+      a {
+        @include v.link;
+      }
+    }
+
+    &--info {
+      padding: 30px;
+      display: flex;
+      gap: 15px;
+      flex-direction: column;
+      line-height: 1.5;
+    }
+    &--date {
+      @include v.title;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+    &--slash {
+      display: block;
+      width: 100%;
+      height: 4px;
+      background: var(--gray-separator-color);
+    }
+
+    @media (min-width: v.$breakpoint-md) {
+      flex: 1 1 47%;
+    }
+    @media (min-width: v.$breakpoint-lg) {
+      flex: 1 1 31%;
+    }
+  }
+}

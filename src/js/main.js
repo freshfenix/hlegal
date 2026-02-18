@@ -1,3 +1,10 @@
+import Swiper from "swiper";
+import { Pagination, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+
 import "../scss/style.scss";
 
 (() => {
@@ -35,3 +42,30 @@ import "../scss/style.scss";
     });
   });
 })();
+
+(() => {
+  const teamSwiper = document.querySelector(".team__swiper");
+
+  if (!teamSwiper) return;
+
+  const swiper = new Swiper(".team__swiper", {
+    modules: [Pagination, Autoplay],
+
+    loop: true,
+    autoplay: {
+      delay: 6000,
+    },
+
+    spaceBetween: 30,
+
+    pagination: {
+      el: ".swiper-pagination",
+    },
+  });
+})();
+
+// document
+//   .querySelector("#open-form")
+//   .addEventListener("click", () =>
+//     document.querySelector("#contact-form").showModal(),
+//   );

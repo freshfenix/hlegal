@@ -36,10 +36,9 @@
       position: absolute;
       top: 9px;
       left: 12px;
-      border: var(--white-color) 2px solid;
-      border-top: 2px;
-      border-left: 2px;
-      transform: rotate(42deg);
+      border-bottom: var(--white-color) v.$border-sm;
+      border-right: var(--white-color) v.$border-sm;
+      transform: rotate(45deg);
     }
   }
 }
@@ -104,6 +103,7 @@
     position: relative;
     width: 32px;
     height: 32px;
+    margin-left: auto;
     cursor: pointer;
     border-radius: v.$rounded-sm;
 
@@ -140,9 +140,18 @@
 
   //   LOGO
   &__box {
-    @include v.flex;
+    @include v.flex(flex-start, flex-start);
     margin: 0 -15px;
     padding: 15px 0 10px;
+
+    svg {
+      height: 26px;
+      width: 12px;
+      @media (min-width: v.$breakpoint-md) {
+        height: 47px;
+        width: 21px;
+      }
+    }
 
     @media (min-width: v.$breakpoint-md) {
       margin: 0;
@@ -153,15 +162,27 @@
       top: 50px;
       left: auto;
     }
+    &-name {
+      color: var(--white-color);
+      font-size: 20px;
+
+      @media (min-width: v.$breakpoint-md) {
+        font-size: 36px;
+      }
+    }
   }
   &__box-logo {
+    display: block;
+    width: 69px;
+    height: 32px;
     img {
-      width: 69px;
-      height: 32px;
-      @media (min-width: v.$breakpoint-md) {
-        width: 130px;
-        height: 60px;
-      }
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (min-width: v.$breakpoint-md) {
+      width: 130px;
+      height: 60px;
     }
   }
 
@@ -169,7 +190,7 @@
   &__nav {
     position: fixed;
     z-index: 10;
-    bottom: 0;
+    top: 100%;
     left: 8px;
     right: 8px;
     padding: 12px;
@@ -178,16 +199,21 @@
     border-top-left-radius: v.$rounded-md;
     border-top-right-radius: v.$rounded-md;
     transition: transform v.$transition-deley;
-    transform: translateY(100%);
 
     &.active {
-      transform: translateY(0);
+      transform: translateY(-100%);
     }
     @media (min-width: v.$breakpoint-md) {
       position: static;
       transform: translateY(0);
       background: 0;
       padding: 0;
+      z-index: 0;
+      width: fit-content;
+    }
+    @media (min-width: v.$breakpoint-lg) {
+      justify-content: flex-end;
+      margin-left: auto;
     }
   }
   &__nav-list {
@@ -199,10 +225,8 @@
 
     @media (min-width: v.$breakpoint-md) {
       flex-direction: row;
+      width: auto;
       padding: 0;
-    }
-    @media (min-width: v.$breakpoint-lg) {
-      justify-content: flex-end;
     }
   }
   &__nav-close {
@@ -223,13 +247,16 @@
     @include v.link(var(--brand-regular-color));
     @include v.title(var(--brand-regular-color));
     background: var(--gray-bg-color);
+
     border-radius: v.$rounded-md;
     width: 100%;
     font-size: 24px;
+    border-bottom: 2px solid transparent;
     padding: 7px 0;
+    transition: all 0.5s linear;
 
-    &.activ {
-      --brand-regular-color: #f0145a;
+    &.active {
+      color: var(--accent-color);
     }
     &:active {
       background: var(--gray-separator-color);
@@ -237,26 +264,23 @@
     }
 
     @media (min-width: v.$breakpoint-md) {
-      width: 100%;
-      border-bottom: 2px solid transparent;
       font-size: 16px;
-      @include v.link(var(--white-color));
+      color: var(--white-color);
       @include v.hover {
         border-color: var(--white-color);
         --accent-color: #fff;
       }
       border-radius: 0;
       background: 0;
+
+      &.active {
+        border-color: var(--accent-color);
+      }
       &:active {
         background: none;
         color: var(--accent-color);
         border-color: var(--accent-color);
       }
-      // &:hover {
-      //   @include v.link(var(--white-color));
-      //   border-color: var(--white-color);
-      //   --accent-color: #fff;
-      // }
     }
   }
 
@@ -264,7 +288,7 @@
     @include v.link(var(--white-color));
     font-weight: 700;
   }
-  &__adress {
+  &__address {
     color: var(--gray-text-color);
     display: none;
 

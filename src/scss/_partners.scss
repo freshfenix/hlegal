@@ -1,7 +1,7 @@
 @use "vars" as v;
 
 .partners {
-  margin-top: 60px;
+  // margin-top: 60px;
   &__title {
     @include v.title(var(--main-color));
     text-transform: uppercase;
@@ -9,7 +9,7 @@
     text-align: center;
   }
   &__list {
-    display: flex;
+    @include v.flex(space-between, stretch);
     flex-wrap: wrap;
     height: 720px;
     overflow: auto;
@@ -19,7 +19,7 @@
     }
     @media (min-width: v.$breakpoint-xxl) {
       width: 1720px;
-      margin: 0 auto;
+      margin: 0 auto 60px auto;
       border-radius: v.$rounded-md;
     }
   }
