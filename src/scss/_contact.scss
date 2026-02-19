@@ -1,14 +1,18 @@
 @use "vars" as v;
 .contact {
+  @include v.flex(space-between, left);
+  flex-direction: column;
+  gap: 30px;
   margin: 30px 0;
 
   @media (min-width: v.$breakpoint-md) {
+    gap: 60px;
     margin: 60px 0;
   }
 
   @media (min-width: v.$breakpoint-lg) {
-    display: flex;
-    gap: 60px;
+    // display: flex;
+    flex-direction: row;
     margin: 60px auto;
   }
   @media (min-width: v.$breakpoint-xl) {
