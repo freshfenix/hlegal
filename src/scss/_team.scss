@@ -67,14 +67,14 @@
 
   &__inner-bread {
     @include v.link-title;
-    font-size: 14px;
+    font-size: v.$font-sm;
     margin-bottom: 5px;
   }
 
   &__inner-title {
     @include v.text-gradient;
     @include v.title(transparent);
-    font-size: 38px;
+    font-size: v.$font-xl;
   }
 
   &__inner-name {

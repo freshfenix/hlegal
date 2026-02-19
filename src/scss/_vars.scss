@@ -62,6 +62,13 @@ $transition-deley: 0.3s linear;
 $border-sm: 2px solid;
 $border-ml: 4px solid;
 
+// FONT-SIZE
+
+$font-sm: 14px;
+$font-md: 20px;
+$font-lg: 30px;
+$font-xl: 38px;
+
 // MIXINS
 @mixin flex($justify-content: space-between, $align-items: center) {
   display: flex;
@@ -73,6 +80,7 @@ $border-ml: 4px solid;
   color: $title-color;
   font-weight: 700;
 }
+
 @mixin text-gradient($text-gradient: var(--red-text-gradient)) {
   color: transparent;
   background: $text-gradient;
@@ -124,6 +132,4 @@ $border-ml: 4px solid;
     width: 7px;
     height: 7px;
   }
-}
-@mixin border {
 }

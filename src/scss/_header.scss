@@ -9,8 +9,8 @@
   &__header {
   }
   &__title {
-    font-size: 38px;
-    font-weight: 700;
+    @include v.title(var(--white-color));
+    font-size: v.$font-xl;
     text-align: center;
     margin: 0 auto;
     text-transform: lowercase;

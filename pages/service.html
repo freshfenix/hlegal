@@ -95,93 +95,87 @@
                 field of information technology in Ukraine.
               </p>
             </div>
-            <div>
-              <button
-                class="service__button"
-                command="show-modal"
-                commandfor="contact-form"
-              >
-                Free consultation
-              </button>
-              <dialog class="contact-form" id="contact-form">
-                <div class="contact-form__container container">
-                  <div class="contact-form__input-container">
-                    <h2 class="form__title">We would like to help you</h2>
-                    <button
-                      class="form__close-button"
-                      commandfor="contact-form"
-                      command="close"
-                    >
-                      <svg>
-                        <use href="../src/img/icons/sprites.svg#close"></use>
-                      </svg>
-                    </button>
-                    <input class="form__input" type="text" placeholder="name" />
-                    <input
-                      class="form__input"
-                      type="text"
-                      placeholder="message"
-                    />
-                  </div>
-                  <div class="contact-form__input-container">
-                    <h3 class="form__subtitle">How to answer you?</h3>
-                    <input
-                      class="form__input"
-                      type="tel"
-                      placeholder="phone number"
-                    />
-                    <input
-                      class="form__input"
-                      type="email"
-                      placeholder="Email"
-                    />
-                  </div>
+            <button
+              class="service__button"
+              command="show-modal"
+              commandfor="contact-form"
+            >
+              Free consultation
+            </button>
+            <dialog class="form" id="contact-form">
+              <div class="form__container container">
+                <div class="form__button-container">
+                  <h2 class="form__title">We would like to help you</h2>
+                  <button
+                    class="form__close-button"
+                    commandfor="contact-form"
+                    command="close"
+                  >
+                    <svg>
+                      <use href="../src/img/icons/sprites.svg#close"></use>
+                    </svg>
+                  </button>
                 </div>
-              </dialog>
-            </div>
+
+                <div class="form__input-container">
+                  <input class="form__input" type="text" placeholder="Name" />
+                  <textarea
+                    placeholder="Message"
+                    class="form__input form__textarea"
+                  ></textarea>
+                </div>
+                <div class="form__input-container">
+                  <h3 class="form__subtitle">How to answer you?</h3>
+                  <input
+                    class="form__input"
+                    type="tel"
+                    placeholder="Phone number"
+                  />
+                  <input class="form__input" type="email" placeholder="Email" />
+                </div>
+                <button class="form__send-button">Send message</button>
+              </div>
+            </dialog>
           </div>
         </div>
         <div class="container">
           <div class="service__area">
             <h2 class="service__area-title">Services in this area:</h2>
-            <div class="service__list-container">
-              <ul class="service__area-list clearfix">
-                <li class="service__area-item">
-                  support of investment projects for the development of port
-                  infrastructure;
-                </li>
-                <li class="service__area-item">
-                  certification of GTS, entering information about them in
-                  mandatory databases and registers;
-                </li>
-                <li class="service__area-item">
-                  registration of permits for the construction of port
-                  terminals;
-                </li>
-                <li class="service__area-item">
-                  registration of permit and other mandatory documentation
-                  required for carrying out activities in the port (emission
-                  permit, conclusion on EIA, RTC, etc.);
-                </li>
-                <li class="service__area-item">
-                  support of procedures related to the lease of state property
-                  in the port;
-                </li>
-                <li class="service__area-item">
-                  support of procedures related to confirmation of the status of
-                  port operator, maritime agent, foreign sailing line;
-                </li>
-                <li class="service__area-item">
-                  support of procedures related to the inclusion of the company
-                  within the port;appeals against actions related to the illegal
-                  imposition of services in the port by monopoly companies.
-                </li>
-                <li class="service__area-item">
-                  appeals against actions related to the illegal imposition of
-                  services in the port by monopoly companies.
-                </li>
-              </ul>
-            </div>
+            <ul class="service__area-list clearfix">
+              <li class="service__area-item">
+                support of investment projects for the development of port
+                infrastructure;
+              </li>
+              <li class="service__area-item">
+                certification of GTS, entering information about them in
+                mandatory databases and registers;
+              </li>
+              <li class="service__area-item">
+                registration of permits for the construction of port terminals;
+              </li>
+              <li class="service__area-item">
+                registration of permit and other mandatory documentation
+                required for carrying out activities in the port (emission
+                permit, conclusion on EIA, RTC, etc.);
+              </li>
+              <li class="service__area-item">
+                support of procedures related to the lease of state property in
+                the port;
+              </li>
+              <li class="service__area-item">
+                support of procedures related to confirmation of the status of
+                port operator, maritime agent, foreign sailing line;
+              </li>
+              <li class="service__area-item">
+                support of procedures related to the inclusion of the company
+                within the port;appeals against actions related to the illegal
+                imposition of services in the port by monopoly companies.
+              </li>
+              <li class="service__area-item">
+                appeals against actions related to the illegal imposition of
+                services in the port by monopoly companies.
+              </li>
+            </ul>
           </div>
         </div>
       </section>
@@ -189,86 +183,82 @@
     <main>
       <section class="publications">
         <div class="container">
-          <a class="publications__link" href="#">Publications</a>
-          <h2 class="publications__title">Recommended</h2>
+          <a class="publications__link" href="#" aria-label="publications page"
+            >Publications</a
+          >
+          <h2 class="publications__title">We have something to tell</h2>
           <div class="publications__container">
-            <article class="publications__container-card">
-              <div class="img">
-                <img
-                  src="../src/img/webp/table.webp"
-                  width="315"
-                  height="200"
-                  alt="table with papers"
-                />
+            <article class="publications__card">
+              <div class="publications__card-img">
+                <a href="#">
+                  <img
+                    src="../src/img/webp/table.webp"
+                    width="315"
+                    height="200"
+                    alt="table with papers"
+                /></a>
               </div>
-              <div class="publications__container-card--info">
-                <h3 class="publications__container-card--title">
+              <div class="publications__card-info">
+                <h3 class="publications__card-title">
                   <a href="#"> Equity associate </a>
                 </h3>
-                <time
-                  class="publications__container-card--date"
-                  datetime="2026-04-22"
-                >
+                <time class="publications__card-date" datetime="2026-04-22">
                   APRILL 22
                 </time>
-                <span class="publications__container-card--slash"></span>
-                <p class="publications__container-card--text">
+                <span class="publications__card-slash"></span>
+                <p class="publications__card-text">
                   I'm a jun on projects. I am a co-owner of a law firm. How it
                   happened. Before entering my parents told me that if I…
                 </p>
               </div>
             </article>
-            <article class="publications__container-card">
-              <div class="img">
-                <img
-                  src="../src/img/webp/gdpr.webp"
-                  width="315"
-                  height="200"
-                  alt="GDPR Logo"
-                />
+            <article class="publications__card">
+              <div class="publications__card-img">
+                <a href="#">
+                  <img
+                    src="../src/img/webp/gdpr.webp"
+                    width="315"
+                    height="200"
+                    alt="GDPR Logo"
+                /></a>
               </div>
-              <div class="publications__container-card--info">
-                <h3 class="publications__container-card--title">
+              <div class="publications__card-info">
+                <h3 class="publications__card-title">
                   <a href="#">
                     Penalty for the Good Corporation: what will happen to Google
                     and others for violating the GDPR
                   </a>
                 </h3>
-                <time
-                  class="publications__container-card--date"
-                  datetime="2026-09-29"
-                >
+                <time class="publications__card-date" datetime="2026-09-29">
                   SEPTEMBER 29
                 </time>
-                <span class="publications__container-card--slash"></span>
-                <p class="publications__container-card--text">
+                <span class="publications__card-slash"></span>
+                <p class="publications__card-text">
                   And why the recovery of 50 million euros could be a fateful
                   precedent According to Mind.ua January 21 National Commission
                   for Data Protection.
                 </p>
               </div>
             </article>
-            <article class="publications__container-card">
-              <div class="img">
-                <img
-                  src="../src/img/webp/teamwork.webp"
-                  width="315"
-                  height="200"
-                  alt="teamwork"
-                />
+            <article class="publications__card">
+              <div class="publications__card-img">
+                <a href="#">
+                  <img
+                    src="../src/img/webp/teamwork.webp"
+                    width="315"
+                    height="200"
+                    alt="teamwork"
+                /></a>
               </div>
-              <div class="publications__container-card--info">
-                <h3 class="publications__container-card--title">
+              <div class="publications__card-info">
+                <h3 class="publications__card-title">
                   <a href="#"> Millennial Testament</a>
                 </h3>
-                <time
-                  class="publications__container-card--date"
-                  datetime="2026-08-19"
-                >
+                <time class="publications__card-date" datetime="2026-08-19">
                   AUGUST 19
                 </time>
-                <span class="publications__container-card--slash"></span>
-                <p class="publications__container-card--text">
+                <span class="publications__card-slash"></span>
+                <p class="publications__card-text">
                   What and how modern vloggers, opinion leaders and
                   crypto-millionaires will inherit A typical legacy of the
                   Ukrainian generation X looks like this: an apartment in…

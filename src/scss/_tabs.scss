@@ -43,17 +43,15 @@
   &__links-item {
     @include v.title;
     @include v.link(var(--gray-text-color));
-    font-size: 30px;
+    font-size: v.$font-lg;
     white-space: nowrap;
 
     &.active {
       @include v.text-gradient(var(--reversed-red-text-gradient));
     }
-    // &:hover {
-    //   @include v.hover {
-    //     color: var(--accent-color);
-    //   }
-    // }
+    @media (min-width: v.$breakpoint-md) {
+      font-size: v.$font-xl;
+    }
     &:active {
       color: var(--accent-color);
     }
@@ -85,7 +83,11 @@
 
   &__content-title {
     @include v.title(var(--white-color));
-    font-size: 30px;
+    font-size: v.$font-md;
+
+    @media (min-width: v.$breakpoint-md) {
+      font-size: v.$font-lg;
+    }
   }
 
   &__content-desc {

@@ -9,7 +9,7 @@
   &__title {
     @include v.title(transparent);
     @include v.text-gradient;
-    font-size: 30px;
+    font-size: v.$font-lg;
     padding-top: 5px;
 
     @media (min-width: v.$breakpoint-md) {
@@ -24,18 +24,22 @@
     padding-top: 30px;
   }
 
-  &__container-card {
+  &__card {
     flex: 1 1 100%;
     background: var(--white-color);
     border-radius: v.$rounded-sm;
     overflow: hidden;
 
-    img {
-      object-fit: cover;
+    &-img {
       width: 100%;
       height: 200px;
     }
-    &--title {
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+    &-title {
       @include v.title(var(--brand-regular-color));
       transition: v.$transition-deley;
 
@@ -44,20 +48,20 @@
       }
     }
 
-    &--info {
+    &-info {
       padding: 30px;
       display: flex;
       gap: 15px;
       flex-direction: column;
       line-height: 1.5;
     }
-    &--date {
+    &-date {
       @include v.title;
       text-transform: uppercase;
       font-size: 12px;
       letter-spacing: 1px;
     }
-    &--slash {
+    &-slash {
       display: block;
       width: 100%;
       height: 4px;
