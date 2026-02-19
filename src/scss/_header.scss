@@ -66,6 +66,14 @@
     padding: 10px 15px;
     align-items: center;
 
+    &.header-light {
+      background: var(--gray-bg-color);
+
+      @media (min-width: v.$breakpoint-md) {
+        background: none;
+      }
+    }
+
     @media (min-width: v.$breakpoint-md) {
       background: none;
       padding: 0;
@@ -94,6 +102,15 @@
     &:hover {
       @include v.hover {
         background: rgba(255, 255, 255, 0.2);
+      }
+    }
+    &.header-light {
+      color: var(--gray-text-color);
+      &.active {
+        color: var(--white-color);
+      }
+      @include v.hover {
+        background: var(--gray-bg-color);
       }
     }
   }
@@ -165,6 +182,10 @@
     &-name {
       color: var(--white-color);
       font-size: 20px;
+
+      &.header-light {
+        color: var(--main-color);
+      }
 
       @media (min-width: v.$breakpoint-md) {
         font-size: 36px;
@@ -281,12 +302,27 @@
         color: var(--accent-color);
         border-color: var(--accent-color);
       }
+
+      &.header-light {
+        color: var(--brand-regular-color);
+
+        @include v.hover {
+          border-color: var(--brand-regular-color);
+          --accent-color: #24a3ff;
+        }
+      }
     }
   }
+
+  // CONTACTS
 
   &__tel {
     @include v.link(var(--white-color));
     font-weight: 700;
+
+    &.header-light {
+      color: var(--gray-text-color);
+    }
   }
   &__address {
     color: var(--gray-text-color);
@@ -306,9 +342,51 @@
     }
     @media (min-width: v.$breakpoint-md) {
       display: inline-block;
+
+      &.header-light {
+        svg {
+          color: var(--gray-text-color);
+        }
+      }
     }
   }
 }
 
-// .default--dotted {
-// }
+.header__box-burger-light {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  margin-left: auto;
+  cursor: pointer;
+  border-radius: v.$rounded-sm;
+
+  &:active {
+    background: var(--gray-separator-color);
+  }
+
+  @media (min-width: v.$breakpoint-md) {
+    display: none;
+  }
+
+  &::before,
+  &::after,
+  span {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 6px;
+    right: 6px;
+    height: 2px;
+    background: var(--gray-text-color);
+  }
+
+  &::after {
+    top: auto;
+    bottom: 8px;
+  }
+
+  span {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

@@ -133,3 +133,9 @@ $font-xl: 38px;
     height: 7px;
   }
 }
+@mixin slash {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: var(--gray-separator-color);
+}

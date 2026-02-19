@@ -11,7 +11,7 @@ import "../scss/style.scss";
   const nav = document.querySelector(".header__nav");
 
   document
-    .querySelector(".header__box-burger")
+    .querySelector(".header__box-burger, .header__box-burger-light")
     ?.addEventListener("click", () => {
       nav.classList.add("active");
     });

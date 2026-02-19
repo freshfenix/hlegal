@@ -62,10 +62,7 @@
       letter-spacing: 1px;
     }
     &-slash {
-      display: block;
-      width: 100%;
-      height: 4px;
-      background: var(--gray-separator-color);
+      @include v.slash;
     }
 
     @media (min-width: v.$breakpoint-md) {
