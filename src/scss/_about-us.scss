@@ -1,0 +1,127 @@
+@use "vars" as v;
+.about {
+  margin: 30px 0 60px;
+  @media (min-width: v.$breakpoint-md) {
+    margin: 60px 0;
+  }
+  &__title {
+    @include v.title(transparent);
+    @include v.text-gradient;
+    font-size: 30px;
+
+    &:nth-child(1) {
+      margin-bottom: 28px;
+    }
+
+    @media (min-width: v.$breakpoint-md) {
+      font-size: 38px;
+    }
+    @media (min-width: v.$breakpoint-lg) {
+      flex: 1 1 40%;
+    }
+  }
+
+  &__box {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    @media (min-width: v.$breakpoint-lg) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__box-text {
+    font-size: 19px;
+    line-height: 1.6;
+
+    p + p {
+      margin-top: 20px;
+    }
+
+    @media (min-width: v.$breakpoint-lg) {
+      flex: 1 1 55%;
+    }
+  }
+
+  &__list {
+    border-left: 4px var(--gray-separator-color) solid;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    grid-area: list;
+
+    @media (min-width: v.$breakpoint-lg) {
+      flex: 1 1 40%;
+    }
+  }
+
+  &__list-item {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    gap: 10px;
+    padding-left: 34px;
+    svg {
+      width: 32px;
+      height: 32px;
+      margin: 3px 5px 0 0;
+      color: var(--accent-color);
+    }
+    span {
+      @include v.title(transparent);
+      @include v.text-gradient;
+      font-size: 36px;
+    }
+  }
+
+  &__img-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 30px 0;
+    width: 100vw;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 3;
+      inset: 0;
+      background: linear-gradient(264.71deg, #f01432 0%, #323264 29.69%);
+      background-blend-mode: screen;
+      opacity: 0.4;
+    }
+    span {
+      position: absolute;
+      @include v.title(var(--white-color));
+      z-index: 5;
+      text-transform: uppercase;
+      font-size: 36px;
+      letter-spacing: 0.36em;
+      opacity: 0.7;
+
+      @media (min-width: v.$breakpoint-md) {
+        font-size: 46px;
+        letter-spacing: 0.73em;
+      }
+
+      @media (min-width: v.$breakpoint-lg) {
+        font-size: 86px;
+      }
+      @media (min-width: v.$breakpoint-xl) {
+        font-size: 96px;
+      }
+    }
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    // background: url("../img/webp/team.webp") no-repeat center / cover;
+
+    @media (min-width: v.$breakpoint-md) {
+      margin: 60px 0;
+    }
+  }
+}

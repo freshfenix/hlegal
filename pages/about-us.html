@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>hlegal</title>
+    <meta name="description" content="Publications" />
+    <title>About us</title>
   </head>
   <body>
     <header class="head__header header">
@@ -42,7 +43,7 @@
           <svg>
             <use href="../src/img/icons/sprites.svg#slash"></use>
           </svg>
-          <span class="header__box-name header-light">contact</span>
+          <span class="header__box-name header-light">about us</span>
           <div class="header__box-burger-light">
             <span></span>
           </div>
@@ -53,7 +54,7 @@
           </svg>
           <ul class="header__nav-list">
             <li class="header__nav-item">
-              <a class="header__nav-link header-light" href="#">about us</a>
+              <a class="header__nav-link active" href="#">about us</a>
             </li>
             <li class="header__nav-item">
               <a class="header__nav-link header-light" href="./services.html"
@@ -64,90 +65,103 @@
               <a class="header__nav-link header-light" href="#">team</a>
             </li>
             <li class="header__nav-item">
-              <a
-                class="header__nav-link header-light"
-                href="./publications.html"
-                >publications</a
-              >
+              <a class="header__nav-link header-light" href="#">publications</a>
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link active" href="#">contact</a>
+              <a class="header__nav-link header-light" href="./contact.html"
+                >contact</a
+              >
             </li>
           </ul>
         </nav>
       </div>
     </header>
     <main>
-      <div class="container">
-        <div class="contact">
-          <div class="contact__container">
-            <address class="contact__item">
-              Kyiv,<br />
-              Mechnikova str., 14/1
-            </address>
-            <span class="contact__slash"></span>
-            <a class="contact__item phone" href="tel:+380800211927">
-              0800 211 927
-            </a>
-            <a class="contact__item email" href="mail:contact@forstudy.space"
-              >contact@forstudy.space</a
-            >
-            <span class="contact__slash"></span>
-            <a class="contact__social" href="#">
-              <svg>
-                <use href="../src/img/icons/sprites.svg#facebook"></use>
-              </svg>
-              <span
-                >Our page <br />
-                on facebook</span
-              >
-            </a>
-          </div>
-
-          <div class="form__container contact__container">
-            <div class="form__button-container">
-              <h2 class="form__title">We would like to help you</h2>
+      <section class="about">
+        <div class="container about__container">
+          <div class="about__box">
+            <div class="about__box-text">
+              <h2 class="about__title">
+                We turn over the idea of legal services
+              </h2>
+              <p>
+                Consolidating many years of experience and practice, the
+                company's lawyers accompany complex projects and achieve the
+                adoption of a number of decisions that are important for the
+                industry. Many people form the practice of applying the law of
+                the sea in Ukraine.
+              </p>
+              <p>
+                HLEGAL is a reliable business partner, confirmed by stable
+                cooperation with international law firms, the trust of large
+                Ukrainian and international companies, and the recognition of
+                professional ratings.
+              </p>
             </div>
-
-            <div class="form__input-container">
-              <input
-                class="form__input"
-                type="text"
-                placeholder="Name"
-                name="name"
-                autocomplete="username"
-              />
-              <textarea
-                placeholder="Message"
-                class="form__input form__textarea"
-                name="message"
-              ></textarea>
-            </div>
-            <div class="form__input-container">
-              <h3 class="form__subtitle">How to answer you?</h3>
-              <input
-                class="form__input"
-                type="tel"
-                placeholder="Phone number"
-                name="phone"
-                autocomplete="on"
-              />
-              <input
-                class="form__input"
-                type="email"
-                placeholder="Email"
-                name="email"
-                autocomplete="email"
-              />
-            </div>
-            <button class="form__send-button">Send message</button>
+            <ul class="about__list">
+              <li class="about__list-item">
+                <div>
+                  <svg>
+                    <use href="../src/img/icons/sprites.svg#expirience"></use>
+                  </svg>
+                  <span>10+</span>
+                </div>
+                years of relevant experience
+              </li>
+              <li class="about__list-item">
+                <div>
+                  <svg>
+                    <use href="../src/img/icons/sprites.svg#clients"></use>
+                  </svg>
+                  <span>30+</span>
+                </div>
+                active clients who entrust us with their orders on a monthly
+                basis
+              </li>
+              <li class="about__list-item">
+                <div>
+                  <svg>
+                    <use href="../src/img/icons/sprites.svg#probono"></use>
+                  </svg>
+                  <span>500+</span>
+                </div>
+                hours of pro bono work annually
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
+        <div class="about__img-box">
+          <img src="../src/img/webp/team.webp" alt="team" />
+          <span>team</span>
+        </div>
+        <div class="container">
+          <div class="about__box">
+            <div class="about__box-text">
+              <p>
+                The historically unchanged legal profession has begun to
+                reformat in recent years. Clients are feeling this, but law
+                firms are still resisting evolution. Clients need convenience,
+                simplicity, transparent payment. Google, IBM WatsOn, Symantec
+                Clearwell prove that the technological revolution in legal
+                services has begun and is imminent.
+              </p>
+              <p>Quality is what we care about the most.</p>
+              <p>
+                It's simple. If you are unhappy with our work, we will refund
+                your money. We trust our clients. And we want our clients to
+                trust us too.
+              </p>
+            </div>
+            <h2 class="about__title">
+              Quality is what we care about the most.
+            </h2>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="footer">
       <div class="container">
-        <div class="footer__container">
+        <div class="footer__container footer-border">
           <div>
             <div class="footer__contacts-container">
               <address class="footer__address">

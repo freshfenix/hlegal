@@ -2,6 +2,13 @@
 .publications {
   background: var(--gray-bg-color);
   padding-top: 30px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 30px;
+  }
   &__link {
     @include v.link-title;
   }
@@ -17,7 +24,7 @@
     }
   }
 
-  &__container {
+  &__box {
     @include v.flex(space-between, stretch);
     flex-wrap: wrap;
     gap: 30px;
@@ -31,6 +38,7 @@
     overflow: hidden;
 
     &-img {
+      display: block;
       width: 100%;
       height: 200px;
     }
@@ -53,7 +61,10 @@
       display: flex;
       gap: 15px;
       flex-direction: column;
-      line-height: 1.5;
+    }
+    &-text {
+      font-size: 14px;
+      line-height: 1.6;
     }
     &-date {
       @include v.title;
@@ -70,6 +81,75 @@
     }
     @media (min-width: v.$breakpoint-lg) {
       flex: 1 1 31%;
+    }
+  }
+
+  // SWITCH
+
+  &__custom-switch {
+    margin: 0 auto;
+  }
+
+  &__switch-label {
+    display: inline-flex;
+    height: 42px;
+    border: 2px var(--gray-separator-color) solid;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: var(--gray-separator-color);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background: var(--white-color);
+      border-radius: 10px;
+      transition: all 0.3s linear;
+    }
+  }
+
+  &__switch-input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked + .publications__switch-label::before {
+      transform: translateX(100%);
+      right: calc(-100%);
+    }
+  }
+  &__switch--span {
+    @include v.title(var(--main-color));
+    position: relative;
+    display: flex;
+    flex: 1 1 50%;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px;
+  }
+
+  // BUTTON
+
+  &__button {
+    @include v.title(var(--white-color));
+    margin: 0 auto;
+    padding: 18px 30px;
+    text-align: center;
+    border-radius: v.$rounded-md;
+    background-color: var(--brand-regular-color);
+    box-shadow: 0px 0px 20px 0px rgba(36, 163, 255, 0.5);
+    cursor: pointer;
+    @include v.hover {
+      background-color: var(--brand-hover-color);
+    }
+    &:active {
+      background-color: var(--brand-active-color);
     }
   }
 }

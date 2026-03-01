@@ -1,0 +1,127 @@
+@use "vars" as v;
+
+.publication {
+  padding: 30px 0 60px;
+
+  @media (min-width: v.$breakpoint-md) {
+    padding: 60px 0;
+  }
+
+  @media (min-width: v.$breakpoint-xxl) {
+    max-width: 1360px;
+    margin: 0 auto;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+  &__container {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+  }
+
+  &__box {
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: v.$rounded-md;
+
+      @media (min-width: v.$breakpoint-md) {
+        height: 500px;
+      }
+    }
+  }
+  &__title {
+    @include v.title(var(--main-color));
+    font-size: 22px;
+    padding: 30px 0 15px;
+  }
+
+  &__info {
+    p + p {
+      padding-top: 15px;
+    }
+  }
+
+  &__info-title {
+    @include v.title(transparent);
+    @include v.text-gradient;
+    font-size: v.$font-lg;
+  }
+
+  &__subtitle {
+    @include v.title(var(--main-color));
+    padding-bottom: 15px;
+  }
+
+  &__list {
+  }
+
+  &__list-item {
+    position: relative;
+    padding-left: 40px;
+
+    & + & {
+      margin-top: 15px;
+    }
+
+    &::before {
+      @include v.title(var(--accent-color));
+      position: absolute;
+      top: -4px;
+      left: 20px;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    &:nth-child(1)::before {
+      content: "1.";
+    }
+    &:nth-child(2)::before {
+      content: "2.";
+    }
+  }
+
+  &__img {
+    padding: 30px 0;
+    margin: 0 auto;
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+
+      @media (min-width: v.$breakpoint-md) {
+        width: 640px;
+        height: 398px;
+      }
+    }
+    &-caption {
+      color: var(--gray-text-color);
+      font-size: v.$font-sm;
+      line-height: 1.6;
+      padding-top: 15px;
+    }
+  }
+  &__social-list {
+    display: flex;
+    gap: 10px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      margin: 9px;
+    }
+  }
+  &__social-link {
+    display: block;
+    width: 42px;
+    height: 42px;
+    background-color: var(--gray-bg-color);
+    border-radius: v.$rounded-md;
+    @include v.hover {
+      background-color: var(--gray-bg-alt-color);
+    }
+  }
+}

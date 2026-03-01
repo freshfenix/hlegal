@@ -159,6 +159,7 @@
   //   LOGO
   &__box {
     @include v.flex(flex-start, flex-start);
+    gap: 4px;
     margin: 0 -15px;
     padding: 15px 0 10px;
 
