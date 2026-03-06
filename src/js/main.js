@@ -44,11 +44,11 @@ import "../scss/style.scss";
 })();
 
 (() => {
-  const teamSwiper = document.querySelector(".team__swiper");
+  const teamSwiper = document.querySelector(".team-s__swiper");
 
   if (!teamSwiper) return;
 
-  const swiper = new Swiper(".team__swiper", {
+  const swiper = new Swiper(".team-s__swiper", {
     modules: [Pagination, Autoplay],
 
     loop: true,
@@ -73,9 +73,9 @@ import "../scss/style.scss";
     modules: [Pagination, Autoplay],
 
     loop: true,
-    // autoplay: {
-    //   delay: 6000,
-    // },
+    autoplay: {
+      delay: 6000,
+    },
 
     spaceBetween: 30,
 
