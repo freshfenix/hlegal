@@ -64,6 +64,37 @@ import "../scss/style.scss";
   });
 })();
 
+(() => {
+  const teamSwiper = document.querySelector(".achievements__list");
+
+  if (!teamSwiper) return;
+
+  const swiper = new Swiper(".achievements__list", {
+    modules: [Pagination, Autoplay],
+
+    loop: true,
+    // autoplay: {
+    //   delay: 6000,
+    // },
+
+    spaceBetween: 30,
+
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+      },
+      768: {
+        slidesPerView: 4,
+        slidesPerGroup: 3,
+      },
+    },
+  });
+})();
+
 // document
 //   .querySelector("#open-form")
 //   .addEventListener("click", () =>

@@ -1,0 +1,109 @@
+@use "vars" as v;
+
+.achievements {
+  .swiper-pagination {
+    --swiper-pagination-color: var(--brand-regular-color);
+    --swiper-pagination-bullet-inactive-color: var(--swiper-pagination-color);
+    --swiper-pagination-bullet-size: 16px;
+    position: static;
+    margin-top: 30px;
+  }
+  background: var(--gray-bg-color);
+  &__container {
+    padding: 30px 60px 0;
+
+    @media (min-width: v.$breakpoint-md) {
+      padding: 30px 0 0;
+    }
+  }
+  &__title {
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    @include v.title(var(--main-regular-color));
+    margin-bottom: 30px;
+  }
+  &__item {
+    height: 90px;
+    overflow: hidden;
+    position: relative;
+    background: var(--white-color);
+    border-radius: v.$rounded-md;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.34);
+      @media (min-width: v.$breakpoint-lg) {
+        transform: translate(-50%, -50%) scale(0.5);
+      }
+    }
+    @media (min-width: v.$breakpoint-lg) {
+      height: 110px;
+    }
+  }
+}
+.achievements__item:nth-child(1) {
+  &::before {
+    width: 160px;
+    height: 120px;
+    background: url("../img/webp/achivments_sprites.webp") -420px -150px;
+  }
+}
+.achievements__item:nth-child(2) {
+  &::before {
+    width: 318px;
+    height: 120px;
+    background: url("../img/webp/achivments_sprites.webp") -420px -10px;
+  }
+}
+.achievements__item:nth-child(3) {
+  &::before {
+    width: 390px;
+    height: 120px;
+    background: url("../img/webp/achivments_sprites.webp") -10px -10px;
+  }
+}
+.achievements__item:nth-child(4) {
+  &::before {
+    width: 332px;
+    height: 120px;
+    background: url("../img/webp/achivments_sprites.webp") -10px -150px;
+  }
+}
+.achievements__item:nth-child(5) {
+  &::before {
+    width: 160px;
+    height: 120px;
+    background: url("../img/webp/achivments_sprites.webp") -420px -150px;
+  }
+}
+.achievements__item:nth-child(6) {
+  &::before {
+    width: 318px;
+    height: 120px;
+    background: url("../img/webp/achivments_sprites.webp") -420px -10px;
+  }
+}
+.achievements__item:nth-child(7) {
+  &::before {
+    width: 390px;
+    height: 120px;
+    background: url("../img/webp/achivments_sprites.webp") -10px -10px;
+  }
+}
+.achievements__item:nth-child(8) {
+  &::before {
+    width: 332px;
+    height: 120px;
+    background: url("../img/webp/achivments_sprites.webp") -10px -150px;
+  }
+}
+.achievements__item:nth-child(9) {
+  &::before {
+    width: 332px;
+    height: 120px;
+    background: url("../img/webp/achivments_sprites.webp") -10px -150px;
+  }
+}

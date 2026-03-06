@@ -1,0 +1,111 @@
+@use "vars" as v;
+
+.team {
+  margin: 30px 0;
+  @media (min-width: v.$breakpoint-md) {
+    margin: 60px 0;
+  }
+
+  &__container {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr;
+
+    @media (min-width: v.$breakpoint-md) {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: start;
+    }
+    @media (min-width: v.$breakpoint-lg) {
+      gap: 30px 60px;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: repeat(auto-fill, minmax(75px, auto));
+    }
+  }
+
+  &__img {
+    width: auto;
+    height: 375px;
+    overflow: hidden;
+    border-radius: v.$rounded-md;
+    @media (min-width: v.$breakpoint-lg) {
+      grid-row: 1 / span 2;
+    }
+
+    @media (min-width: v.$breakpoint-xl) {
+      height: 500px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__contact {
+    @media (min-width: v.$breakpoint-md) {
+      align-self: center;
+    }
+
+    &-box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .dotted {
+        display: none;
+      }
+
+      @media (min-width: v.$breakpoint-xl) {
+        flex-direction: row;
+        align-items: center;
+
+        .dotted {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  &__name {
+    @include v.title(transparent);
+    @include v.text-gradient;
+    font-size: 38px;
+    margin-bottom: 15px;
+  }
+
+  &__position {
+    font-size: 14px;
+    color: var(--gray-text-color);
+    line-height: 1.6;
+  }
+
+  &__link {
+    @include v.link;
+  }
+
+  &__info {
+    border-top: 4px var(--gray-separator-color) solid;
+    padding-top: 30px;
+    p {
+      line-height: 1.6;
+    }
+    p + p {
+      margin-top: 20px;
+    }
+
+    @media (min-width: v.$breakpoint-md) {
+      grid-column: -3 / span 2;
+    }
+
+    @media (min-width: v.$breakpoint-lg) {
+      grid-column: -2 / -1;
+    }
+  }
+
+  &__subtitle {
+    @include v.title(var(--main-color));
+    text-transform: uppercase;
+    font-size: 14px;
+    margin: 30px 0 15px;
+  }
+}

@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>hlegal</title>
+    <meta name="description" content="Publications" />
+    <title>Team</title>
   </head>
   <body>
     <header class="head__header header">
@@ -42,7 +43,7 @@
           <svg>
             <use href="../src/img/icons/sprites.svg#slash"></use>
           </svg>
-          <span class="header__box-name header-light">contact</span>
+          <span class="header__box-name header-light">team</span>
           <div class="header__box-burger-light">
             <span></span>
           </div>
@@ -63,9 +64,7 @@
               >
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link header-light" href="./teams.html"
-                >team</a
-              >
+              <a class="header__nav-link active" href="#">team</a>
             </li>
             <li class="header__nav-item">
               <a
@@ -75,79 +74,54 @@
               >
             </li>
             <li class="header__nav-item">
-              <a class="header__nav-link active" href="#">contact</a>
+              <a class="header__nav-link header-light" href="./contact.html"
+                >contact</a
+              >
             </li>
           </ul>
         </nav>
       </div>
     </header>
     <main>
-      <div class="container">
-        <div class="contact">
-          <div class="contact__container">
-            <address class="contact__item">
-              Kyiv,<br />
-              Mechnikova str., 14/1
-            </address>
-            <span class="contact__slash"></span>
-            <a class="contact__item phone" href="tel:+380800211927">
-              0800 211 927
-            </a>
-            <a class="contact__item email" href="mail:contact@forstudy.space"
-              >contact@forstudy.space</a
-            >
-            <span class="contact__slash"></span>
-            <a class="contact__social" href="#">
-              <svg>
-                <use href="../src/img/icons/sprites.svg#facebook"></use>
-              </svg>
-              <span
-                >Our page <br />
-                on facebook</span
-              >
-            </a>
+      <section class="team">
+        <div class="container team__container">
+          <div class="team__img">
+            <img src="../src/img/webp/Team-5.webp" alt="team-photo" />
           </div>
-
-          <div class="form__container contact__container">
-            <div class="form__button-container">
-              <h2 class="form__title">We would like to help you</h2>
+          <div class="team__contact">
+            <h1 class="team__name">Oksana Kobzar</h1>
+            <div class="team__contact-box">
+              <p class="team__position">Equity partner, Attorney-at-law</p>
+              <span class="dotted dotted--default"></span>
+              <a class="team__link" href="mailto:kobzar@forstudy.space"
+                >kobzar@forstudy.space
+              </a>
+              <span class="dotted dotted--default"></span>
+              <a class="team__link" href="#">LinkedIn profile</a>
             </div>
-
-            <div class="form__input-container">
-              <input
-                class="form__input"
-                type="text"
-                placeholder="Name"
-                name="name"
-                autocomplete="username"
-              />
-              <textarea
-                placeholder="Message"
-                class="form__input form__textarea"
-                name="message"
-              ></textarea>
-            </div>
-            <div class="form__input-container">
-              <h3 class="form__subtitle">How to answer you?</h3>
-              <input
-                class="form__input"
-                type="tel"
-                placeholder="Phone number"
-                name="phone"
-                autocomplete="on"
-              />
-              <input
-                class="form__input"
-                type="email"
-                placeholder="Email"
-                name="email"
-                autocomplete="email"
-              />
-            </div>
-            <button class="form__send-button">Send message</button>
+          </div>
+          <div class="team__info">
+            <p>
+              Oksana heads the practice of international trade and shipping. He
+              specializes in resolving disputes related to the purchase and sale
+              of raw materials and transportation of goods by sea.
+            </p>
+            <p>
+              Desis represents the interests of shipowners, freight forwarders,
+              cargo owners, shipping agents, container lines, as well as
+              international banks and P&I clubs.
+            </p>
+            <h2 class="team__subtitle">Education</h2>
+            <p>National University "Odesa Law Academy", Master of Law.</p>
+            <h2 class="team__subtitle">Experience</h2>
+            Her professional experience includes resolving disputes under
+            English law and representing interests in foreign commercial
+            arbitrations such as GAFTA, FOSFA and LMAA. Danilo also represents
+            the interests of clients in the state courts of Ukraine on similar
+            disputes, as well as in the ICAC and IAC at the CCI of Ukraine
           </div>
         </div>
-      </div>
+      </section>
     </main>
     <footer class="footer">
       <div class="container">
@@ -158,18 +132,25 @@
                 Kyiv, Mechnikova str., 14/1
               </address>
               <span class="dotted dotted--gray"></span>
-              <a class="footer__link" href="#">On map</a>
+              <a class="footer__link" href="#" aria-label="on map">On map</a>
             </div>
             <div class="footer__contacts-container">
-              <a class="footer__social" href="#">
+              <a
+                class="footer__social"
+                href="https://www.facebook.com/Hillel.IT.School"
+                target="_blank"
+                aria-label="facebook"
+              >
                 <svg>
                   <use href="../src/img/icons/sprites.svg#facebook"></use>
                 </svg>
               </a>
               <span class="dotted dotted--gray"></span>
-              <a class="footer__tel" href="tel:+380800211927">0800 211 927</a>
+              <a class="footer__tel" href="tel:+380800211927" aria-label="phone"
+                >0800 211 927</a
+              >
               <span class="dotted dotted--gray"></span>
-              <a class="footer__mail" href="mail:contact@forstudy.space"
+              <a class="footer__mail" href="mailto:contact@forstudy.space"
                 >contact@forstudy.space</a
               >
             </div>
