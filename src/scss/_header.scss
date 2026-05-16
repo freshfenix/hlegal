@@ -86,35 +86,7 @@
       position: relative;
     }
   }
-  &__lang {
-    display: flex;
-    align-items: center;
-  }
-  &__lang-item {
-    font-size: 12px;
-    padding: 5px 7px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    border-radius: v.$rounded-sm;
-    cursor: pointer;
-    &.active {
-      background: var(--accent-color);
-    }
-    &:hover {
-      @include v.hover {
-        background: rgba(255, 255, 255, 0.2);
-      }
-    }
-    &.header-light {
-      color: var(--gray-text-color);
-      &.active {
-        color: var(--white-color);
-      }
-      @include v.hover {
-        background: var(--gray-bg-color);
-      }
-    }
-  }
+
 
   //   BURGER-MENU
   &__box-burger {

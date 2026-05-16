@@ -81,7 +81,11 @@
     justify-content: center;
     position: relative;
     margin: 30px 0;
-    width: calc(100vw - 15px);
+    width: 100wh;
+
+    @media (min-width: v.$breakpoint-xl) {
+      width: calc(100vw - 15px);
+    }
 
     &::before {
       content: "";
